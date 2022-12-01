@@ -1,14 +1,37 @@
-# Vite + React
+# Description
 
-This is a [Vite](https://vitejs.dev) project together with React.
+In this task, you will create a React.js application in codesandbox.
 
-[![Edit in CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/github/codesandbox/codesandbox-template-vite-react/main)
 
-[Configuration](https://codesandbox.io/docs/projects/learn/setting-up/tasks) has been added to optimize it for [CodeSandbox Projects](https://codesandbox.io/p/dashboard).
+To know more:
+
+[codesandbox](https://codesandbox.io/docs/learn/getting-started/your-first-sandbox)
+
+
+Use the React + Vite option, just like in the local repository.
+
+## Objectives
+
+* Understand the role of React in an application.
+
+## Instructions
+
+1. Represent a triangle, a circle, and a square, using the most appropriate HTML elements.
+
+2. Allow the color and size of each shape to be controlled interactively by the user, as shown in the video.
+
+3. Throw an alert when the size of all the elements is the same or when the color of all the elements is the same.
+
+4. Initializes elements with different size and color.
 
 ## Resources
 
-- [CodeSandbox Projects — Docs](https://codesandbox.io/docs/projects)
-- [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
-- [Vite — GitHub](https://github.com/vitejs/vite)
-- [Vite — Docs](https://vitejs.dev/guide/)
+[help video link](https://youtube.com/shorts/pd9SAG_rBpI)
+
+## Delivery
+
+- Create a github.com repository.
+
+- Link the repository to CodeSandBox.
+
+- There are 3 revisions on GitHub/CodeSandbox in order to pass the test.
