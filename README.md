@@ -1,4 +1,4 @@
-# Description
+# :page_with_curl: Description
 
 In this task, you will create a React.js application in codesandbox.
 
@@ -10,11 +10,11 @@ To know more:
 
 Use the React + Vite option, just like in the local repository.
 
-## Objectives
+## :dart: Objectives
 
 * Understand the role of React in an application.
 
-## Instructions
+## :memo: Instructions
 
 1. Represent a triangle, a circle, and a square, using the most appropriate HTML elements.
 
@@ -24,11 +24,11 @@ Use the React + Vite option, just like in the local repository.
 
 4. Initializes elements with different size and color.
 
-## Resources
+## :movie_camera: Resources
 
 [help video link](https://youtube.com/shorts/pd9SAG_rBpI)
 
-## Delivery
+## :truck: Delivery
 
 - Create a github.com repository.
 
