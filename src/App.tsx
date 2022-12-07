@@ -38,7 +38,7 @@ function App() {
         <strong>Exercise useState & useEffect .</strong>
       </h4>
       <div className="triangle">        
-        <InputSize  size={sizeTriangle}
+        <InputSize label="Triangle size" size={sizeTriangle}
           onChange={(e) => setSizeTriangle(e.target.value)}/>
         <br />
         <InputColor label="Triangle color" color={colorTriangle} onChange={(e) => setColorTriangle(e.target.value)} />       
@@ -47,7 +47,7 @@ function App() {
       <br />
       <br />
       <div className="circle">
-        <InputSize  size={sizeCircle} onChange={(e) => setSizeCircle(e.target.value)} />
+        <InputSize label="Circle size" size={sizeCircle} onChange={(e) => setSizeCircle(e.target.value)} />
         <br />
         <InputColor label="Circle color" color={colorCircle} onChange={(e) => setColorCircle(e.target.value)} />
         <Circle size={sizeCircle} color={colorCircle} />
@@ -55,7 +55,7 @@ function App() {
       <br />
       <br />
       <div className="square">          
-        <InputSize id="inputSquare" size={sizeSquare} onChange={(e) => setSizeSquare(e.target.value)} />
+        <InputSize label="Square size" size={sizeSquare} onChange={(e) => setSizeSquare(e.target.value)} />
         <br />
         <InputColor label="Square color" color={colorSquare} onChange={(e) => setColorSquare(e.target.value)} />
         <Square size={sizeSquare} color={colorSquare} />
