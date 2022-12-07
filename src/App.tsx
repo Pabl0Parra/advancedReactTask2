@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
 
+import InputSize from "./components/atoms/InputSize"
+import InputColor from "./components/atoms/InputColor"
+import Triangle from "./components/atoms/Triangle"
+import Circle from "./components/atoms/Circle"
+import Square from "./components/atoms/Square"
+
 import "./App.css";
 
-// Por lo general mover todo en pequeños componentes.
-// Sugiero crear los componentes Label, InputNumber, InputColor, Triangle, Square y Circle.
-function App() {
-  // Saca la función del componente, sino se redeclara por cada renderizado.
-  // también puedes setear un color aleatorio una vez, y no tener esta función
-  const getRandomColor = () => "#" + Math.random().toString(16).slice(2, 8);
 
-// Buena implementación de la lógica
-  const [colorTriangle, setColorTriangle] = useState(getRandomColor());
-  const [colorCircle, setColorCircle] = useState(getRandomColor());
-  const [colorSquare, setColorSquare] = useState(getRandomColor());
+function App() {  
+  const [colorTriangle, setColorTriangle] = useState("#800000");
+  const [colorCircle, setColorCircle] = useState("#4DD44D");
+  const [colorSquare, setColorSquare] = useState("#564DD4");
 
   const [sizeTriangle, setSizeTriangle] = useState("");
   const [sizeCircle, setSizeCircle] = useState("");
   const [sizeSquare, setSizeSquare] = useState("10");
 
   useEffect(() => {
-    setSizeTriangle(getRandomSize());
-    setSizeCircle(getRandomSize());
-    setSizeSquare(getRandomSize());
+    setSizeTriangle("50");
+    setSizeCircle("80");
+    setSizeSquare("60");
   }, []);
 
   if (sizeTriangle === sizeCircle && sizeTriangle === sizeSquare) {
@@ -32,105 +32,33 @@ function App() {
     alert(`The three figures have the same color`);
   }
 
-  const styles = { width: 0, height: 0 };
-
-  const getRandomSize = () => {
-    return `${Math.floor(Math.random() * 100)}`;
-  };
-
   return (
     <div className="App">
       <h4>
         <strong>Exercise useState & useEffect .</strong>
       </h4>
-      <div className="triangle">
-        {/* El label va asociado al id del input, no al name */}
-        <label htmlFor="triangle-size">Triangle size</label>
-        <input
-          type="number"
-          name="triangle-size"
-          style={{ width: 42 }}
-          value={sizeTriangle}
-          onChange={(e) => setSizeTriangle(e.target.value)}
-        />
-        {/* Mejor <br /> */}
-        <br></br>
-        <label htmlFor="triangle-color">Triangle color</label>
-        <input
-          type="color"
-          name="triangle-color"
-          style={{ width: 40 }}
-          value={colorTriangle}
-          onChange={(e) => setColorTriangle(e.target.value)}
-        />
-        {/* Crear un componente Triangle.jsx que devuelva un svg, comprueba las props con PropTypes */}
-        <figure
-          className="triangle-shape"
-          style={{
-            ...styles,
-            color: `${colorTriangle}`,
-            borderLeft: `${sizeTriangle}/2px solid ${colorTriangle}`,
-            borderRight: `${sizeTriangle}/2px solid ${colorTriangle}`,
-            borderBottom: `${sizeTriangle}px solid ${colorTriangle}`,
-          }}
-        ></figure>
+      <div className="triangle">        
+        <InputSize  size={sizeTriangle}
+          onChange={(e) => setSizeTriangle(e.target.value)}/>
+        <br />
+        <InputColor label="Triangle color" color={colorTriangle} onChange={(e) => setColorTriangle(e.target.value)} />       
+        <Triangle size={sizeTriangle} color={colorTriangle} />
       </div>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
       <div className="circle">
-        <label htmlFor="circle-size">Circle size</label>
-        <input
-          type="number"
-          name="circle-size"
-          style={{ width: 42 }}
-          value={sizeCircle}
-          onChange={(e) => setSizeCircle(e.target.value)}
-        />
-        <br></br>
-        <label htmlFor="circle-color">Circle color</label>
-        <input
-          type="color"
-          name="circle-color"
-          style={{ width: 40 }}
-          value={colorCircle}
-          onChange={(e) => setColorCircle(e.target.value)}
-        />
-        <figure
-          style={{
-            backgroundColor: colorCircle,
-            width: `${sizeCircle}px`,
-            height: `${sizeCircle}px`,
-            borderRadius: `${sizeCircle}px`,
-          }}
-        />
+        <InputSize  size={sizeCircle} onChange={(e) => setSizeCircle(e.target.value)} />
+        <br />
+        <InputColor label="Circle color" color={colorCircle} onChange={(e) => setColorCircle(e.target.value)} />
+        <Circle size={sizeCircle} color={colorCircle} />
       </div>
-      <br></br>
-      <br></br>
-      <div className="square">
-        <label htmlFor="square-size">Square size</label>
-        <input
-          type="number"
-          name="square-size"
-          style={{ width: 42 }}
-          value={sizeSquare}
-          onChange={(e) => setSizeSquare(e.target.value)}
-        />
-        <br></br>
-        <label htmlFor="square-color">Square color</label>
-        <input
-          type="color"
-          name="square-color"
-          style={{ width: 40 }}
-          value={colorSquare}
-          onChange={(e) => setColorSquare(e.target.value)}
-        />
-        <figure
-          style={{
-            backgroundColor: colorSquare,
-            width: `${sizeSquare}px`,
-            height: `${sizeSquare}px`,
-          }}
-        />
+      <br />
+      <br />
+      <div className="square">          
+        <InputSize id="inputSquare" size={sizeSquare} onChange={(e) => setSizeSquare(e.target.value)} />
+        <br />
+        <InputColor label="Square color" color={colorSquare} onChange={(e) => setColorSquare(e.target.value)} />
+        <Square size={sizeSquare} color={colorSquare} />
       </div>
     </div>
   );
