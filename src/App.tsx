@@ -2,9 +2,14 @@ import { useState, useEffect } from "react";
 
 import "./App.css";
 
+// Por lo general mover todo en pequeños componentes.
+// Sugiero crear los componentes Label, InputNumber, InputColor, Triangle, Square y Circle.
 function App() {
+  // Saca la función del componente, sino se redeclara por cada renderizado.
+  // también puedes setear un color aleatorio una vez, y no tener esta función
   const getRandomColor = () => "#" + Math.random().toString(16).slice(2, 8);
 
+// Buena implementación de la lógica
   const [colorTriangle, setColorTriangle] = useState(getRandomColor());
   const [colorCircle, setColorCircle] = useState(getRandomColor());
   const [colorSquare, setColorSquare] = useState(getRandomColor());
@@ -39,6 +44,7 @@ function App() {
         <strong>Exercise useState & useEffect .</strong>
       </h4>
       <div className="triangle">
+        {/* El label va asociado al id del input, no al name */}
         <label htmlFor="triangle-size">Triangle size</label>
         <input
           type="number"
@@ -47,6 +53,7 @@ function App() {
           value={sizeTriangle}
           onChange={(e) => setSizeTriangle(e.target.value)}
         />
+        {/* Mejor <br /> */}
         <br></br>
         <label htmlFor="triangle-color">Triangle color</label>
         <input
@@ -56,6 +63,7 @@ function App() {
           value={colorTriangle}
           onChange={(e) => setColorTriangle(e.target.value)}
         />
+        {/* Crear un componente Triangle.jsx que devuelva un svg, comprueba las props con PropTypes */}
         <figure
           className="triangle-shape"
           style={{
