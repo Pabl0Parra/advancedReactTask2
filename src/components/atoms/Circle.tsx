@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 const Circle = ({ size, color }: { size: any; color: string }) => {
   return (

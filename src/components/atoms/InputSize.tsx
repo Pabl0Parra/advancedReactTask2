@@ -1,19 +1,19 @@
 import PropTypes from "prop-types";
 
 const InputSize = ({
-  id,
+  label,
   size,
   onChange,
 }: {
-  id: any,
+  label: any,
   size: any;
   onChange: any;
 }) => {
   return (
     <>
-      
+      <label htmlFor="shapeSize">{label}:</label>
       <input
-        id={id}
+        id="shapeSize"
         name="shapeSize"
         type="number"
         style={{ width: "42px" }}
@@ -25,7 +25,7 @@ const InputSize = ({
 };
 
 InputSize.propTypes = {
-  id: PropTypes.any.isRequired,
+  label: PropTypes.any.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.any.isRequired,
 };

@@ -1,0 +1,5 @@
+export * from './Circle'
+export * from './Triangle'
+export * from './Square'
+export * from './InputNumber'
+export * from './InputColor'
