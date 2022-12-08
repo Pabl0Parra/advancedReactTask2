@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 
-import InputSize from "./components/atoms/InputSize"
-import InputColor from "./components/atoms/InputColor"
-import Triangle from "./components/atoms/Triangle"
-import Circle from "./components/atoms/Circle"
-import Square from "./components/atoms/Square"
+import InputSize from "./components/atoms/InputSize";
+import InputColor from "./components/atoms/InputColor";
+import Triangle from "./components/atoms/Triangle";
+import Circle from "./components/atoms/Circle";
+import Square from "./components/atoms/Square";
 
-import "./App.css";
-
-
-function App() {  
+function App() {
   const [colorTriangle, setColorTriangle] = useState("#800000");
   const [colorCircle, setColorCircle] = useState("#4DD44D");
   const [colorSquare, setColorSquare] = useState("#564DD4");
@@ -37,27 +34,50 @@ function App() {
       <h4>
         <strong>Exercise useState & useEffect .</strong>
       </h4>
-      <div className="triangle">        
-        <InputSize label="Triangle size" size={sizeTriangle}
-          onChange={(e) => setSizeTriangle(e.target.value)}/>
+      <div className="triangle">
+        <InputSize
+          label="Triangle size"
+          size={sizeTriangle}
+          onChange={(e) => setSizeTriangle(e.target.value)}
+        />
         <br />
-        <InputColor label="Triangle color" color={colorTriangle} onChange={(e) => setColorTriangle(e.target.value)} />       
+        <InputColor
+          label="Triangle color"
+          color={colorTriangle}
+          onChange={(e) => setColorTriangle(e.target.value)}
+        />
         <Triangle size={sizeTriangle} color={colorTriangle} />
       </div>
       <br />
       <br />
       <div className="circle">
-        <InputSize label="Circle size" size={sizeCircle} onChange={(e) => setSizeCircle(e.target.value)} />
+        <InputSize
+          label="Circle size"
+          size={sizeCircle}
+          onChange={(e) => setSizeCircle(e.target.value)}
+        />
         <br />
-        <InputColor label="Circle color" color={colorCircle} onChange={(e) => setColorCircle(e.target.value)} />
+        <InputColor
+          label="Circle color"
+          color={colorCircle}
+          onChange={(e) => setColorCircle(e.target.value)}
+        />
         <Circle size={sizeCircle} color={colorCircle} />
       </div>
       <br />
       <br />
-      <div className="square">          
-        <InputSize label="Square size" size={sizeSquare} onChange={(e) => setSizeSquare(e.target.value)} />
+      <div className="square">
+        <InputSize
+          label="Square size"
+          size={sizeSquare}
+          onChange={(e) => setSizeSquare(e.target.value)}
+        />
         <br />
-        <InputColor label="Square color" color={colorSquare} onChange={(e) => setColorSquare(e.target.value)} />
+        <InputColor
+          label="Square color"
+          color={colorSquare}
+          onChange={(e) => setColorSquare(e.target.value)}
+        />
         <Square size={sizeSquare} color={colorSquare} />
       </div>
     </div>

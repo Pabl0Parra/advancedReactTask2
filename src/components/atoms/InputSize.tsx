@@ -5,7 +5,7 @@ const InputSize = ({
   size,
   onChange,
 }: {
-  label: any,
+  label: any;
   size: any;
   onChange: any;
 }) => {
@@ -26,8 +26,8 @@ const InputSize = ({
 
 InputSize.propTypes = {
   label: PropTypes.any.isRequired,
+  size: PropTypes.any.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.any.isRequired,
 };
 
-export default InputSize
+export default InputSize;
